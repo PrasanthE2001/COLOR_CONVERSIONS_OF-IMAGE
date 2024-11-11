@@ -1,10 +1,10 @@
-# COLOR_CONVERSIONS_OF-IMAGE
+# COLOR_CONVERSIONS_OF-IMAGE->
 ## AIM
 Write a Python program using OpenCV that performs the following tasks:
 
 i) Read and Display an Image.
 
-ii) Draw Shapes and Add Text.
+ii) 	Draw Shapes and Add Text.
 
 iii) Image Color Conversion.
 
@@ -23,270 +23,283 @@ viii)	Write and Save the Modified Image
 Anaconda - Python 3.7
 ## Algorithm:
 ### Step1:
-Load an image from your local directory and display it.
+1.Load an image from your local directory and display it.
 ### Step2:
-1.  Draw a line from the top-left to the bottom-right of the image.
+1.Draw a line from the top-left to the bottom-right of the image.
 
-2.	Draw a circle at the center of the image.
+2.Draw a circle at the center of the image.
 
-3.	Draw a rectangle around a specific region of interest in the image.
+3.Draw a rectangle around a specific region of interest in the image.
 
-4.	Add the text "OpenCV Drawing" at the top-left corner of the image.
+4.Add the text "OpenCV Drawing" at the top-left corner of the image.
 
 ### Step3:
-1.	Convert the image from RGB to HSV and display it.
-2.	Convert the image from RGB to GRAY and display it.
-3.	Convert the image from RGB to YCrCb and display it.
-4.	Convert the HSV image back to RGB and display it.
+1.Convert the image from RGB to HSV and display it.
+
+2.Convert the image from RGB to GRAY and display it.
+
+3.Convert the image from RGB to YCrCb and display it.
+
+4.Convert the HSV image back to RGB and display it.
 
 ### Step4:
-1.	Access and print the value of the pixel at coordinates (100, 100).
-2.	Modify the color of the pixel at (200, 200) to white.
+1.Access and print the value of the pixel at coordinates (100, 100).
+
+2.Modify the color of the pixel at (200, 200) to white.
 
 ### Step5:
-Resize the original image to half its size and display it.
+1.Resize the original image to half its size and display it.
 ### Step6:
-Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
+1.Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
 ### Step7:
-1.	Flip the original image horizontally and display it.
-2.	Flip the original image vertically and display it.
+1.Flip the original image horizontally and display it.
+
+2.Flip the original image vertically and display it.
 
 ### Step8:
-Save the final modified image to your local directory.
+1.Save the final modified image to your local directory.
 
 
 ## Program:
-### Developed By: E Prasanth
+### Developed By: E PRASANTH
 ### Register Number: 212221233002
 
-
-## Output:
-
-### 1. Read and display the image
-i.Load an image from your local directory and display it.
+### i)Read and Display an Image
 ```
-img=cv2.imread("gojo.jpeg")
-cv2.imshow("display", img)
+import cv2
+import cv2
+img=cv2.imread('ajith.jpg',1)
+cv2.imshow('Image Window', img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![WhatsApp Image 2024-09-28 at 15 48 01](https://github.com/user-attachments/assets/076960bb-2b3b-4ddf-8305-23681688a5d2)
+### Output
+![image](https://github.com/user-attachments/assets/69215035-2899-4bfe-a80a-b6729bccb333)
 
 
 
-### Draw Shapes and Add Text
-(1) Draw a line from the top-left to the bottom-right of the image.
+
+
+### ii)Draw Shapes and Add Text
+1) Draw a line from the top-left to the bottom-right of the image.
 ```
-img=cv2.imread("gojo.jpeg")
-line=cv2.line(img,(0,0),(736,414),(0,0,255),10)
-plt.imshow(line)
-plt.axis('off')
-plt.show()
-```
-![WhatsApp Image 2024-09-28 at 15 48 27](https://github.com/user-attachments/assets/5d8fec68-bd66-4e92-b89d-2381498d408d)
-
-
-
-2. Draw a circle at the center of the image.
-```
-img=cv2.imread("gojo.jpeg")
-circle=cv2.circle(img,(400,200),(150),(255,0,0),10)
-plt.imshow(circle)
-plt.axis('off')
-plt.show()
-```
-![image](https://github.com/user-attachments/assets/3a034df9-638e-473d-968b-f02c9e08663e)
-
-
-
-3.Draw a rectangle around a specific region of interest in the image.
-```
-image = cv2.imread("gojo.jpeg")
-image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-l = (200, 100) 
-b = (550, 300)  
-rectangle = cv2.rectangle(image_rgb, l, b, (255, 0, 0), 5)
-plt.imshow(rectangle)
-plt.axis('off')
-plt.show()
-```
-![image](https://github.com/user-attachments/assets/15891160-441e-4a12-b699-b99ad659b8cb)
-
-
-
-
-4.Add the text "OpenCV Drawing" at the top-left corner of the image.
-```
-iimport cv2
+import cv2
 import matplotlib.pyplot as plt
-image = cv2.imread("gojo.jpeg")
-image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(image_rgb, 'OpenCV Drawing', (50, 50), font, 1, (255, 0, 0), 2)
-plt.imshow(image_rgb)
+image = cv2.imread("ajith.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+res = cv2.line(image, (0, 0), (440,591), (200, 100, 205), 10)
+plt.imshow(res)
 plt.axis('off')
 plt.show()
 ```
-![image](https://github.com/user-attachments/assets/1bd83165-32b3-435f-9c12-b9bbe1ed7244)
+### Output
+![image](https://github.com/user-attachments/assets/60a2d339-b14f-49bb-9dc4-a61ababac76a)
 
+
+
+(2) Draw a circle at the center of the image.
+```
+import matplotlib.pyplot as plt
+img = cv2.imread("ajith.jpg")
+img.shape
+resimg=cv2.circle(img_resiz,(200,200),100,(200,0,0),10)
+resimg_rgb =cv2.cvtColor(resimg, cv2.COLOR_BGR2RGB)
+plt.imshow(resimg_rgb)
+plt.show()
+
+```
+### Output
+![image](https://github.com/user-attachments/assets/11c1a70f-3f78-456f-b0d1-881b054763c6)
+
+
+
+(3) Draw a rectangle around a specific region of interest in the image.
+```
+import cv2
+img = cv2.imread("ajith.jpg")
+res_img=cv2.rectangle(img,(0,0),(400,400),(100,255,100),10)
+cv2.imshow('Image Window', res_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+### Output
+![image](https://github.com/user-attachments/assets/df10f9b7-a7e5-4659-8e32-e7d80334d704)
+
+
+
+(4) Add the text "OpenCV Drawing" at the top-left corner of the image.
+```
+import cv2
+import matplotlib.pyplot as plt
+image = cv2.imread("ajith.jpg")
+
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+font = cv2.FONT_HERSHEY_SIMPLEX
+res = cv2.putText(image,"AJITH", (5,150), font,1.5, (0, 0, 0),5)
+plt.imshow(res)
+plt.axis('off')
+plt.show()
+```
+### Output
+
+![image](https://github.com/user-attachments/assets/b7be1c9d-d824-441c-9216-9e2c530c2345)
 
 
 ### iii)Image Color Conversion
-(i)Convert the image from RGB to HSV and display it
+1) Convert the image from RGB to HSV and display it
 ```
 import cv2
-image = cv2.imread('gojo.jpeg',1)
-cv2.imshow('ORIGINAL IMAGE',image)
-hsv = cv2.cvtColor(image,cv2.COLOR_RGB2HSV)
-cv2.imshow('RGB2HSV',hsv)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("ajith.jpg")
+hsv2 = cv2.cvtColor(image,cv2.COLOR_RGB2HSV)
+plt.imshow(hsv2)
+plt.axis('off')
+plt.show()
 ```
-![image](https://github.com/user-attachments/assets/940f35af-1b00-41d5-becd-c44dfed04a7d)
+### Output
 
+![image](https://github.com/user-attachments/assets/564248cf-a96b-4363-9807-6969a2a8c6b6)
 
 
 (2) Convert the image from RGB to GRAY and display it.
-
 ```
-import cv2
-image = cv2.imread('gojo.jpeg',1)
-cv2.imshow('ORIGINAL IMAGE',image)
-gray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
-cv2.imshow('RGB2GRAY',gray)
+mg = cv2.imread('ajith.jpg',1)
+gray2 = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
+cv2.imshow('RGB2GRAY',gray2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/81d97fc3-42bb-4b8e-b59e-a74b65abcf44)
+### Output
+
+![Screenshot 2024-09-30 090117](https://github.com/user-attachments/assets/3360ef28-db96-4687-a8e9-6cedd609d058)
 
 
 
-
-(3) Convert the image from RGB to YCrCb and display it.
+3) Convert the image from RGB to YCrCb and display it.
 ```
 import cv2
-image = cv2.imread('gojo.jpeg',1)
-cv2.imshow('ORIGINAL IMAGE',image)
-YCrCb = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
-cv2.imshow('RGB-2-YCrCb',YCrCb)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("ajith.jpg")
+YCrCb1 = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
+plt.imshow(YCrCb1)
+plt.axis('off')
+plt.show()
 ```
-![image](https://github.com/user-attachments/assets/d311fd68-0c52-4502-addf-b54d901f3ab4)
+### Output
+![image](https://github.com/user-attachments/assets/75a53c5b-a224-49e3-9ba7-ecc7160131c0)
 
 
 
 (4) Convert the HSV image back to RGB and display it.
 ```
 import cv2
-image = cv2.imread('gojo.jpeg',1)
-image = cv2.resize(image,(300,200))
-cv2.imshow('ORIGINAL IMAGE',image)
-RGB = cv2.cvtColor(image,cv2.COLOR_HSV2BGR)
-cv2.imshow('HSV2RGB',RGB)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("ajith.jpg")
+BGR = cv2.cvtColor(image,cv2.COLOR_HSV2BGR)
+plt.imshow(BGR)
+plt.axis('off')
+plt.show()
 ```
-![image](https://github.com/user-attachments/assets/990a7cff-728d-498e-9799-d6c73d7b508f)
+### Output
 
+![image](https://github.com/user-attachments/assets/9dddbe3b-44fd-4d1f-a1d8-43573af1b5a5)
 
 
 ### iv)Access and Manipulate Image Pixels
-(1) Access and print the value of the pixel at coordinates (100, 100)
-```
-pixel_value = image[100, 100]
-print(f"Pixel value at (100, 100): {pixel_value}")
-```
-![image](https://github.com/user-attachments/assets/e3e07855-01fb-427b-af27-429b17fb9fe3)
-
-
-
-(2) Modify the color of the pixel at (200, 200) to white
 ```
 import cv2
-image = cv2.imread('gojo.jpeg',1)
-image = cv2.resize(image,(400,300))
-cv2.imshow('ORIGINAL IMAGE',image)
-image[200, 200] = [255, 255, 255] 
-cv2.imshow('MODIFIED IMAGE', image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("ajith.jpg")
+image = cv2.resize(image,(400,400))
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+pixel_value = image[100, 100]
+print(f"Pixel value at (100, 100): {pixel_value}")
+image[199, 199] = [255, 255, 255]
+plt.imshow(image)
+plt.axis('off')
+plt.show()
 ```
-![image](https://github.com/user-attachments/assets/b231f746-4f46-4c16-8a07-0b8d9c43dbdf)
+### Output
 
+![image](https://github.com/user-attachments/assets/98411a2d-a6ff-4eaf-ae84-d351ffd5c962)
 
-
-### v)Image Resizing:
-Resize the original image to half its size and display it.
+### v)Image Resizing
 ```
-cv2.imshow('ORIGINAL IMAGE',image)
-resized_image = cv2.resize(image, (350,200))
-cv2.imshow('RESIZED IMAGE', resized_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import cv2
+import matplotlib.pyplot as plt
+image = cv2.imread("ajith.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+resized_img = cv2.resize(image, (900, 1000))
+plt.imshow(resized_img)
+plt.axis('off')
+plt.show()
 ```
-![image](https://github.com/user-attachments/assets/34c686bc-169b-4dc6-9c17-bbd21076d9ca)
+### Output
+![image](https://github.com/user-attachments/assets/e2b708f5-afef-4dd9-9c82-11b4bfcc3699)
 
 
 
 ### vi)Image Cropping
-Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
 ```
 import cv2
-image = cv2.imread('gojo.jpeg',1)
-image = cv2.resize(image,(400,300))
-x, y = 50, 50
-width, height = 100, 100
-roi = image[y:y + height, x:x + width]
-cv2.imshow('CROPPED IMAGE', roi)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("ajith.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+roi = image[50:50 + 425, 50:50 + 425]
+plt.imshow(roi)
+plt.axis('off')
+plt.show()
 ```
-![image](https://github.com/user-attachments/assets/d87c519f-a436-40c6-aa06-be1c4bd7c95f)
+### Output
+
+![image](https://github.com/user-attachments/assets/39bd75a1-35f9-401e-be63-980e7b2b1349)
 
 
-### vii)Image Flipping:
+### vii)Image Flipping
 (1) Flip the original image horizontally and display it.
 ```
 import cv2
-image = cv2.imread("gojo.jpeg")
-image= cv2.resize(image, (400,300))
+import matplotlib.pyplot as plt
+image = cv2.imread("ajith.jpg")
+image = cv2.resize(image,(400,400))
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 res=cv2.rotate(image,cv2.ROTATE_180)
-cv2.imshow('ORIGINAL IMAGE',image)
-cv2.imshow('FLIPPED IMAGE', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+plt.imshow(res)
+plt.axis('off')
+plt.show()
 ```
-![image](https://github.com/user-attachments/assets/91ffa498-ff9d-4862-b43c-a6431fb75c3d)
+### Output
 
+![image](https://github.com/user-attachments/assets/110fe1ee-03f9-4762-93cb-afc8a5c8fb0f)
 
 
 (2) Flip the original image vertically and display it.
 ```
 import cv2
-image = cv2.imread("gojo.jpeg")
-image= cv2.resize(image, (400,400))
-res=cv2.rotate(image,cv2.ROTATE_90_CLOCKWISE)
-cv2.imshow('ORIGINAL IMAGE',image)
-cv2.imshow('FLIPPED IMAGE', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("ajith.jpg")
+image = cv2.resize(image,(400,400))
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+image=cv2.rotate(image,cv2.ROTATE_90_CLOCKWISE)
+plt.imshow(image)
+plt.axis('off')
+plt.show()
 ```
-![image](https://github.com/user-attachments/assets/bf00e551-1c35-445b-aeb0-b2d1154dd082)
+### Output
 
+![image](https://github.com/user-attachments/assets/322d94e2-0651-46c4-96dc-51b9002bb1bf)
 
 
 ### viii)Write and Save the Modified Image
-Save the final modified image to your local directory.
 ```
 import cv2
-img = cv2.imread("gojo.jpg")
-cv2.imwrite('apple.jpg',img)
+img = cv2.imread("ajith.jpg")
+cv2.imwrite('ajith.jpg',img)
 ```
-![image](https://github.com/user-attachments/assets/34bbd9fa-bb9a-416b-a3c7-e4c462c34209)
+### Output
 
+![image](https://github.com/user-attachments/assets/f3580ffc-df8e-4170-90c0-dfdfcee14ee7)
 
 
 ## Result:
-
-Thus the images are read, displayed, and written ,and color conversion was performed successfully using the python program.
+Thus the images are read, displayed, and written ,and color conversion was performed  successfully using the python program.
